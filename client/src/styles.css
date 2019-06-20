@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+@import url(~..\node_modules/bootstrap/dist/css/bootstrap.min.css);
+@import url(~..\node_modules/font-awesome/css/font-awesome.css);
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: white;
+    opacity: 1; /* Firefox */
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: white;
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: white;
+  }
