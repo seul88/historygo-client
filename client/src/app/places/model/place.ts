@@ -3,8 +3,8 @@ export interface Place{
     name:string;
     visits:number;
     description:string;
-    gps_E:number;
-    gps_N:number;
+    longitude:number;
+    latitude:number;
     points:number;
     year:number;
     rating:number;
