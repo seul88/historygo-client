@@ -1,4 +1,3 @@
-/*
 export interface Question{
     id : number;
     question : string;
@@ -8,4 +7,3 @@ export interface Question{
     c : string;
     d : string;
 }
-*/
