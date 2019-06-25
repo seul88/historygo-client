@@ -2,15 +2,14 @@
   <div class="row" style="margin-top:12px;">
     <div class="col-1">
      </div>
-     <div class="col-10">
-        <div style="margin:30px;"></div> 
+     <div class="col-10" style="margin:30px;">
+  
         <button type="button"              
         class="btn btn-warning fa-pull-right"
         style="margin-left:12px;">
-        <i class="fa fa-plus"></i> Add question
+        <i class="fa fa-plus"></i> Add new question
         </button>
 
-          <div style="margin:30px;"></div> 
           <h3>Quiz Questions</h3> 
          
             <p *ngIf="this.questions.length === 0"> There are no questions in database</p>
@@ -70,7 +69,9 @@
                     name="a"
                     maxlength="1" style="width: 20%; font-size: 26px; text-transform: uppercase;" 
                     />
-                    <button type="button" class="btn btn-danger" style="font-size:26px; margin-left: 200px ;margin-right:30px;" >DELETE THIS QUESTION</button>
+                    <br> <br>
+                    <button type="button" class="btn btn-primary" style="font-size:26px;">SUBMIT CHANGES</button>
+                    <button (click)="deleteQuestion(question)" type="button" class="btn btn-danger" style="font-size:26px; margin-left: 200px ;margin-right:30px;" >DELETE THIS QUESTION</button>
                     <br>
                 </div>
               

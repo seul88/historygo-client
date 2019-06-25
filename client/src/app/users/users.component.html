@@ -1,3 +1,40 @@
-<p>
-  users works!
-</p>
+<div class="container">
+  <div class="row"  style="text-align: justify; text-justify: inter-word;">
+    <div class="col-2">
+    </div>
+
+    <div class="col-8">
+      <div class="container" style="margin: 30px;">
+          <h3>Players profiles</h3>
+
+        <!-- for each user -->
+        <div *ngIf="this.users.length===0"><h4>There are no players in database.</h4></div> 
+        <div *ngFor="let user of users">
+          <div style="margin:30px;"></div> 
+            <div style="padding: 20px; border-style: groove;">  
+            <h4>ID&nbsp;#{{user.id}}</h4>
+            User nickname:&nbsp;&nbsp;<b>{{user.name}}</b><br>
+            User email:&nbsp;&nbsp;<b>{{user.email}}</b><br>
+            Number of points:&nbsp;&nbsp;<b>{{user.points}}</b>
+            <button  (click)="deleteUserById(user)" class="btn btn-danger" name="deleteUserId" style="margin-left:200px;">DELETE THIS USER</button><br>
+            Country of origin:&nbsp;&nbsp;<b>{{user.country}}</b><br>
+            Number of visited places:&nbsp;&nbsp;<b>{{user.places.length}}</b>
+      
+            <div *ngIf="this.user.places.length !== 0"> List of visited places:&nbsp;&nbsp;
+              <ng-container *ngFor="let userPlace of user.places"> <i>{{userPlace.name}}</i> &nbsp; 
+              </ng-container>
+            </div>
+
+  
+            </div>
+        </div>
+          
+      </div>
+
+
+    </div>
+
+    <div class="col-2">
+    </div>
+  </div>
+</div>

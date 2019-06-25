@@ -20,7 +20,6 @@ export class PlacesComponent implements OnInit {
   }
 
   public getAllPlaces(){
-    let url = "http://localhost:8080/places/all";
     this.apiService.getAllPlaces().subscribe(
         res => {
           this.places=res;
@@ -28,6 +27,19 @@ export class PlacesComponent implements OnInit {
         err => {
           alert("Error...");
         }
+    );
+  }
+
+
+  public deletePlaceById(place : Place){ 
+    this.apiService.deletePlaceById(place.id).subscribe(
+      res => {
+        let indexOfPlace = this.places.indexOf(place);
+        this.places.splice(indexOfPlace,1);
+      },
+      err => {
+        console.log(err);
+      }
     );
   }
 

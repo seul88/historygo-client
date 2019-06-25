@@ -63,22 +63,20 @@
         <div class="row">
           <div class="col-md-12">
               <!--  <h3 *ngIf="selectedCity != null">{{selectedCity.name}}</h3> -->
-              <!--   <h3 *ngIf="selectedCity == null">All cities</h3> -->
-
-            
-            
-           
+              <!--   <h3 *ngIf="selectedCity == null">All cities</h3> --> 
               <h3>All touristic places</h3> 
-             
           </div>
         </div>
         <div class="row">
           <!-- Places list -->
                <p *ngIf="this.places.length === 0"> There are no places in database</p>
-               <div  *ngFor="let place of places" class="card bg-warning"  style="border: 4px solid white;">
-                <div  class="card bg-info"  style="border: 4px solid white;"> 
+
+
+               <div  *ngFor="let place of places">
+                  <div style="margin:30px;"></div> 
+                <div style="padding: 20px; border-style: groove;"> 
                     <div style="margin-left:20px;">
-                      <div class="card-body" style="padding: 8px; margin-top: 8px;">
+                      <div  style="padding: 8px; margin-top: 8px;">
                           <!-- title -->
                           <!--  (change)= "updatePlace(place)" -->
                             <!-- [(ngModel)]="place.name" -->
@@ -86,8 +84,8 @@
                               placeholder="Place name"
                               value='{{place.name}}'
                               name="name"
-                              class="input-label-lg bg-info" 
-                              maxlength="20" style="width: 70%; border:none; font-size: 34px;" 
+                              class="input-label-lg" 
+                              maxlength="20" style="width: 100%; font-size: 34px;" 
                               />
                                 <!--  <a (click)="deletePlace(place)" class="text-danger"> -->
                             
@@ -96,39 +94,39 @@
                               placeholder="Place foundation year"
                               value='{{place.year}}'
                               name="year"
-                              class="input-label-lg bg-info" 
-                              maxlength="20" style="width: 80%; border:none; font-size: 20px;" 
+                              class="input-label-lg" 
+                              maxlength="20" style="width: 100%; font-size: 20px;" 
                               />
 
                               <input type="number" 
                               placeholder="Points to gain for visit"
                               value='{{place.points}}'
                               name="points"
-                              class="input-label-lg bg-info" 
-                              maxlength="20" style="width: 80%; border:none; font-size: 20px;" 
+                              class="input-label-lg" 
+                              maxlength="20" style="width: 100%; font-size: 20px;" 
                               />
 
                               <input type="number" 
                               placeholder="Latitude (north-south)"
                               value='{{place.latitude}}'
                               name="latitude"
-                              class="input-label-lg bg-info" 
-                              maxlength="20" style="width: 80%; border:none; font-size: 20px;" 
+                              class="input-label-lg" 
+                              maxlength="20" style="width: 100%; font-size: 20px;" 
                               />
                               
                               <input type="number" 
                               placeholder="Longitude (east-west)"
                               value='{{place.longitude}}'
                               name="longitude"
-                              class="input-label-lg bg-info" 
-                              maxlength="20" style="width: 80%; border:none; font-size: 20px;" 
+                              class="input-label-lg" 
+                              maxlength="20" style="width: 100%; font-size: 20px;" 
                               />
 
                               <br>
                               Visits: {{place.visits}} <br>
                               Rating: {{place.rating}}<br>
 
-                              <textarea class="input-label bg-info" 
+                              <textarea class="input-label" 
                               placeholder="Place description"
                               value='{{place.description}}'
                               name="description"
@@ -136,7 +134,7 @@
                               <strong clang ss="text-info" style="font-size: small"></strong>                    
                         </div >          
                 </div>
-                <button type="button" class="btn btn-danger btn-block"  style="font-size:20px; margin-right:30px;" >Delete this place</button>
+                <button type="button" (click)="deletePlaceById(place)" class="btn btn-danger btn-block"  style="font-size:20px; margin-right:30px;" >Delete this place</button>
               </div>
 
 

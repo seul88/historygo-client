@@ -29,4 +29,16 @@ export class QuizComponent implements OnInit {
     );
   }
 
+
+  public deleteQuestion(question : Question){
+    this.apiService.deleteQuizQuestionById(question.id).subscribe(
+      res => {
+        let indexOfQuestion = this.questions.indexOf(question);
+        this.questions.splice(indexOfQuestion,1);
+      },
+      err => {
+        alert("Error...");
+      }
+  );
+  }
 }

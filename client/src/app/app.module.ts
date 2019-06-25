@@ -39,7 +39,7 @@ const appRoutes : Routes = [
     PlacesComponent,
     QuizComponent,
     UsersComponent
-    
+  
   ],
   imports: [
     BrowserModule,
