@@ -33,15 +33,16 @@ export class UsersComponent implements OnInit {
 
 
   public deleteUserById(user : User){
-    this.apiService.deleteUserById(user.id).subscribe(
-      res => {
-        let indexOfUser = this.users.indexOf(user);
-        this.users.splice(indexOfUser, 1);
-      },
-      err => {
-        alert("Error.");
-       }
-    );
+    if(confirm("Are you sure, you want to delete user "+user.name+" from database?"))
+      this.apiService.deleteUserById(user.id).subscribe(
+        res => {
+          let indexOfUser = this.users.indexOf(user);
+          this.users.splice(indexOfUser, 1);
+        },
+        err => {
+          alert("Error.");
+        }
+      );
   }
   
 

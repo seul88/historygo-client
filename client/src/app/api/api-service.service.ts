@@ -16,7 +16,7 @@ export class ApiService {
   private PLACE_URL = this.SERVER_URL + '/places';
   private USERS_URL = this.SERVER_URL + '/users';
   private QUIZ_URL = this.SERVER_URL +'/questions';
-
+  
   constructor(private http : HttpClient) { }
 
 
@@ -43,4 +43,13 @@ export class ApiService {
   deleteQuizQuestionById(id : number) : Observable<any>{
     return this.http.delete(this.QUIZ_URL + '/id/' + id);
   }
+
+  savePlaceChanges(place : Place) : Observable<any>{
+    return this.http.post(this.PLACE_URL, place);
+  }
+
+  saveQuestionChanges(question : Question) : Observable<any>{
+    return this.http.put(this.QUIZ_URL, question);
+  }
+
 }
