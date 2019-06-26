@@ -70,6 +70,6 @@ export class QuizComponent implements OnInit {
       res => {},
       err => {  console.log(err);}
     )
-
   }
+  
 }
